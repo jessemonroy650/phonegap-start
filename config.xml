@@ -38,9 +38,12 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <!--
-        Define a specific version of PhoneGap to build into your app. If you do not set, you will get the latest version.
-        <preference name="phonegap-version"       value="3.7.0" />  <!-- Whitelist NOT required -->
-        <preference name="phonegap-version"       value="cli-5.2.0" /> <!-- Leading edge; whitelist REQUIRED -->
+        Define a specific version of PhoneGap to build into your app. 
+        If you do not set, you will get the latest version.
+        For 3.7.0, Whitelist NOT required.
+        For cli-5.2.0 and Leading edge, whitelist REQUIRED
+        <preference name="phonegap-version"       value="3.7.0" /> 
+        <preference name="phonegap-version"       value="cli-5.2.0" />
     -->
     <!--
         Set this is you want your App to work across different Android Levels. NOTE: This is known to cause compilation issues.
@@ -51,28 +54,28 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-    <gap:plugin name=cordova-plugin-battery-status source=npm />
-    <gap:plugin name=cordova-plugin-camera         source=npm />
-    <gap:plugin name=cordova-plugin-console        source=npm />
-    <gap:plugin name=cordova-plugin-contacts       source=npm />
-    <gap:plugin name=cordova-plugin-device         source=npm />
-    <gap:plugin name=cordova-plugin-device-motion  source=npm  />
-    <gap:plugin name=cordova-plugin-device-orientation source=npm />
-    <gap:plugin name=cordova-plugin-dialogs        source=npm />
-    <gap:plugin name=cordova-plugin-file           source=npm />
-    <gap:plugin name=cordova-plugin-file-transfer  source=npm />
-    <gap:plugin name=cordova-plugin-geolocation    source=npm />
-    <gap:plugin name=cordova-plugin-globalization  source=npm />
-    <gap:plugin name=cordova-plugin-inappbrowser   source=npm />
-    <gap:plugin name=cordova-plugin-legacy-whitelist source=npm /> <!-- NEW -->
-    <gap:plugin name=cordova-plugin-media          source=npm />
-    <gap:plugin name=cordova-plugin-media-capture  source=npm />
-    <gap:plugin name=cordova-plugin-network-information source=npm />
-    <gap:plugin name=cordova-plugin-splashscreen   source=npm />
-    <gap:plugin name=cordova-plugin-statusbar      source=npm /> <!-- NEW -->
-    <gap:plugin name=cordova-plugin-test-framework source=npm /> <!-- NEW -->
-    <gap:plugin name=cordova-plugin-vibration      source=npm />
-    <gap:plugin name=cordova-plugin-whitelist      source=npm /> <!-- NEW -->
+    <gap:plugin name="cordova-plugin-battery-status" source="npm" />
+    <gap:plugin name="cordova-plugin-camera"         source="npm" />
+    <gap:plugin name="cordova-plugin-console"        source="npm" />
+    <gap:plugin name="cordova-plugin-contacts"       source="npm" />
+    <gap:plugin name="cordova-plugin-device"         source="npm" />
+    <gap:plugin name="cordova-plugin-device-motion"  source="npm" />
+    <gap:plugin name="cordova-plugin-device-orientation" source="npm" />
+    <gap:plugin name="cordova-plugin-dialogs"        source="npm" />
+    <gap:plugin name="cordova-plugin-file"           source="npm" />
+    <gap:plugin name="cordova-plugin-file-transfer" source="npm" />
+    <gap:plugin name="cordova-plugin-geolocation"    source="npm" />
+    <gap:plugin name="cordova-plugin-globalization"  source="npm" />
+    <gap:plugin name="cordova-plugin-inappbrowser"   source="npm" />
+    <gap:plugin name="cordova-plugin-legacy-whitelist" source="npm" /> <!-- NEW -->
+    <gap:plugin name="cordova-plugin-media"          source="npm" />
+    <gap:plugin name="cordova-plugin-media-capture"  source="npm" />
+    <gap:plugin name="cordova-plugin-network-information" source="npm" />
+    <gap:plugin name="cordova-plugin-splashscreen"   source="npm" />
+    <gap:plugin name="cordova-plugin-statusbar"      source="npm" /> <!-- NEW -->
+    <gap:plugin name="cordova-plugin-test-framework" source="npm" /> <!-- NEW -->
+    <gap:plugin name="cordova-plugin-vibration"      source="npm" />
+    <gap:plugin name="cordova-plugin-whitelist"      source="npm" /> <!-- NEW -->
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
