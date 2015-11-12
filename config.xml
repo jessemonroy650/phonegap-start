@@ -9,13 +9,17 @@
     <name>Hello World</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.<br />
-        DO NOT USE AS YOUR FINAL PRODUCT.
+        Hello World sample application that responds to the deviceready event. DO NOT USE AS YOUR FINAL PRODUCT.
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
         PhoneGap Team
     </author>
+
+    <!-- REMOVE THE COMMENTS BELOW TO COMPILE FOR iOS -->
+    <!-- <gap:platform name="ios" /> -->
+    <gap:platform name="android" />
+    <gap:platform name="winphone" />
 
     <!--
         If you do not want any permissions to be added to your app, add the
