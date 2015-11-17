@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- config.xml Reference: http://docs.build.phonegap.com/en_US/configuring_basics.md.html --> -->
+<!-- config.xml Reference: http://docs.build.phonegap.com/en_US/configuring_basics.md.html -->
 <!-- NOTE TO BEGINNERS: This a reference only. You should not submit this config.xml as your final product. -->
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
