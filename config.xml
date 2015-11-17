@@ -139,7 +139,7 @@
     <!-- NOTE: This app is insecure and will be denied access to Google's Play and Apple's iTunes, along with others. -->
     <allow-navigation href="*" />
     <allow-intent href="*" />
-    <access origin="*" />
+    <access origin="*" /> <!-- Required for iOS9 -->
 
     <!-- At this time, 'platform' is for Phonegap SDK only. It is not used by Phonegap CLI or Phonegap Build. -->
     <platform name="android">
