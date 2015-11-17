@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- config.xml reference: http://docs.build.phonegap.com/en_US/configuring_basics.md.html#The%20Basics -->
+<!-- config.xml Reference: http://docs.build.phonegap.com/en_US/configuring_basics.md.html --> -->
 <!-- NOTE TO BEGINNERS: This a reference only. You should not submit this config.xml as your final product. -->
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
-        version   = "1.0.0">
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.helloworld"
+        versionCode = "1"
+        version     = "1.1.0">
 
     <name>Hello World</name>
 
@@ -16,15 +17,18 @@
         PhoneGap Team
     </author>
 
-    <!-- REMOVE THE COMMENTS BELOW TO COMPILE FOR iOS -->
-    <!-- <gap:platform name="ios" /> -->
-    <gap:platform name="android" />
-    <gap:platform name="winphone" />
+    <!-- Reference: http://docs.build.phonegap.com/en_US/configuring_basics.md.html#_platform_build_selection -->
+    <!-- 
+        <gap:platform name="ios" />
+        <gap:platform name="android" />
+        <gap:platform name="winphone" />
+    -->
 
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
+        Reference: http://docs.build.phonegap.com/en_US/configuring_preferences.md.html
     -->
     <preference name="permissions"                value="none"/>
 
@@ -46,20 +50,26 @@
         Define a specific version of PhoneGap to build into your app.
         If you do not set, you will get the latest version.
         For 3.7.0, the whitelist is NOT required.
-        For cli-5.2.0 and the "leading edge", the whitelist is REQUIRED.
+        For 4.0.0 and later, including the "leading edge", the whitelist is REQUIRED.
+        For 5.0.0 and later, include cli-5.x.x, CSP is REQUIRED.
+        Reference: http://docs.build.phonegap.com/en_US/configuring_preferences.md.html#_multi_platform
         <preference name="phonegap-version"       value="3.7.0" />  
         <preference name="phonegap-version"       value="cli-5.2.0" />
     -->
     <!--
-        Set this is you want your App to work across different Android Levels.
         NOTE: This is known to cause compilation issues. Leave out, if unsure.
+        Set these to set different Android Levels within 'uses-sdk'.
         <preference name="android-minSdkVersion" value="14" />
         <preference name="android-targetSdkVersion" value="18" />
         <preference name="android-maxSdkVersion" value="22" />
+        Sets the 'Launch Services Key' for 'MinimumOSVersion'.
+        <preference name="deployment-target" value="7.0" />
     -->
     <!-- Plugins -->
 
-    <!-- Core plugins - When done with development, remove un-needed plugins. -->
+    <!-- Core plugins - When done with development, REMOVE un-needed plugins. -->
+    <!-- As of this date: 2015-11-16, the latest plugins are at: -->
+    <!-- Reference: http://cordova.apache.org/docs/en/5.4.0/cordova/plugins/pluginapis.html -->
     <gap:plugin name="cordova-plugin-battery-status" source="npm" />
     <gap:plugin name="cordova-plugin-camera"         source="npm" />
     <gap:plugin name="cordova-plugin-console"        source="npm" />
@@ -84,11 +94,12 @@
     <gap:plugin name="cordova-plugin-whitelist"      source="npm" /> <!-- NEW -->
 
     <!-- Third party plugins -->
-    <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+    <!-- A list of available plugins are available at http://cordova.apache.org/plugins/ -->
     <!--
-        <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+        <gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
     -->
 
+    <!-- Reference: http://docs.build.phonegap.com/en_US/configuring_icons_and_splash.md.html -->
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
@@ -118,39 +129,22 @@
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
 
+    <!-- Reference: http://docs.build.phonegap.com/en_US/configuring_config_file_element.md.html -->
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-    <string>100</string>
+        <string>100</string>
     </gap:config-file>
 
-    <!--
-        Define access to external domains.
-
-        <access />            - a blank access tag denies access to all external resources.
-        <access origin="*" /> - a wildcard access tag allows access to all external resource.
-
-        Otherwise, you can specify specific domains:
-
-        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
-        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
-        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
-    -->
-
-    <access origin="*"/>
-    <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
     <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
-    <plugin name="cordova-plugin-whitelist" version="1" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+    <!-- NOTE: The following settings essentially turns off all 'whitelist' security. -->
+    <!-- NOTE: This app is insecure and will be denied access to Google's Play and Apple's iTunes, along with others. -->
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+
+    <!-- At this time, 'platform' is for Phonegap SDK only. It is not used by Phonegap CLI or Phonegap Build. -->
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
+    <!-- '<allow-intent (..) />' No longer applies to iOS. SEE: https://issues.apache.org/jira/browse/CB-9972 -->
 
 </widget>
